@@ -1,0 +1,35 @@
+
+<div id="mainav">
+  <div class="navbox">
+    <div class="wrap">
+      <div class="mlogo"> <a href="https://www.yingzia.com/pbootcms87/" title="新闻博客财经资讯类网站pbootcms模板(自适应手机端)" class="lvxv--logowz" data-letters="新闻博客财经资讯类网站pbootcms模板(自适应手机端)"> <img src="__INDEX__/picture/1636440424885425.png" alt="新闻博客财经资讯类网站pbootcms模板(自适应手机端)" /> </a> </div>
+      <div class="topmenu">
+        <ul class="bar">
+          <li class="item common"><a href="https://www.yingzia.com/pbootcms87/">网站首页</a><i class="dot"></i> </li>
+          
+
+
+           {volist name="catelist"  id="vo"} 
+          <li class="item common"> <a href="
+
+    {if $vo['type'] eq 1}{:url('/page',['cid'=>$vo.cid])}
+    {elseif $vo['type'] eq 2}{:url('/article',['cid'=>$vo.cid])}
+    {elseif $vo['type'] eq 3}{:url('/product',['cid'=>$vo.cid])}
+    {elseif $vo['type'] eq 4}{:url('/anli',['cid'=>$vo.cid])}
+    {elseif $vo['type'] eq 5}{:url('/lianxi',['cid'=>$vo.cid])}
+    {elseif $vo['type'] eq 6}{:url('/honor',['cid'=>$vo.cid])}
+    {/if}
+
+
+            ">{$vo.name}</a> <i class="dot"></i> </li>
+           {/volist}
+          
+          </li>
+        </ul>
+      </div>
+      <i class="fa fa-navicon"></i>
+    </div>
+    
+  </div>
+  
+</div>

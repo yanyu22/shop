@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>{$cates.seotitle}</title>
+<meta name="keywords" content="{$cates.key}" />
+<meta name="description" content="{$cates.desc}" />
+<meta name="renderer" content="webkit" />
+<meta charset="utf-8" />
+<meta name="generator" data-variable="/305/,cn,167,167,1,ps01703" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui" />
+<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link rel="stylesheet" href="__INDEX__/css/style.css" />
+</head>
+<body class="met-navfixed-index">
+
+{include file="common/header"/}
+
+<div class="met-banner " data-height="300||">
+  <div class="slick-slide"> <img class="cover-image" src="/{$cc.pic}" srcset="/{$cc.pic}" sizes="(max-width: 767px) 500px" alt="{$cc.name}" />
+    <div class="banner-text p-5">
+      <div class="container">
+        <div class="banner-text-con">
+          <div>
+            <h2>{$cc.name}</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="met-column-nav product-search-body bordernone">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9 sidebar_tile">
+        <ul class="met-column-nav-ul">
+          
+
+          {volist name="cate"  id="vo"}
+          <li> <a href="
+
+   {if $vo['type'] eq 1}{:url('/page',['cid'=>$vo.cid])}
+    {elseif $vo['type'] eq 2}{:url('/article',['cid'=>$vo.cid])}
+    {elseif $vo['type'] eq 3}{:url('/product',['cid'=>$vo.cid])}
+    {elseif $vo['type'] eq 4}{:url('/anli',['cid'=>$vo.cid])}
+    {elseif $vo['type'] eq 5}{:url('/lianxi',['cid'=>$vo.cid])}
+      {elseif $vo['type'] eq 6}{:url('/honor',['cid'=>$vo.cid])}
+    {/if}
+
+    " {if $vo.cid eq $cid }   class="link active" {else/} class="link" {/if}>{$vo.name}</a></li>
+          
+         {/volist}
+          
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
+<div class="met-product animsition type-1">
+  <div class="container">
+    <div class="row">
+
+
+      <ul class="blocks-2 blocks-sm-2 blocks-md-3 blocks-xlg-3  met-page-ajax met-grid" id="met-grid" data-scale="0.625">
+
+
+
+
+   {volist name="product"  id="vo"}
+         <li class=" shown">
+          <div class="widget widget-shadow">
+            <figure class="widget-header cover"> <a href="{:url('/productD', ['aid'=>$vo.id])}" title="{$vo.title}">
+              <div class="mask"> </div>
+              <img class="cover-image" src="{$vo.pic}" alt="{$vo.title}" style="height:200px;" /> </a> </figure>
+            <h4 class="widget-title"> <a href="{:url('/productD', ['aid'=>$vo.id])}" title="{$vo.title}">{$vo.title|cut_str=###,23}</a>
+              <p></p>
+            </h4>
+          </div>
+        </li>
+
+ {/volist}
+
+     
+
+
+      </ul>
+      <div class="pages">
+
+ {$product->render()}
+
+</div>
+    </div>
+  </div>
+</div>
+
+
+{include file="common/footer"/}
+
+
+
+</body>
+</html>

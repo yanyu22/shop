@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<title>{$cates.seotitle}</title>
+<meta name="keywords" content="{$cates.key}">
+<meta name="description" content="{$cates.desc}">
+<link rel="stylesheet" href="__INDEX__/css/animate.min.css">
+<link rel="stylesheet" href="__INDEX__/css/swiper.min.css">
+<link rel="stylesheet" href="__INDEX__/css/yunu.css">
+<link rel="Shortcut Icon" type=image/x-icon href="/favicon.ico" />
+<script src="__INDEX__/js/jquery.min.js"></script>
+<script src="__INDEX__/js/wow.min.js"></script>
+<script src="__INDEX__/js/swiper.min.js"></script>
+<script src="__INDEX__/js/yunu.js"></script>
+</head>
+<body>
+
+
+{include file="common/header"/}
+<div class="section-sub">
+  <div class="container">
+    <div class="ct2 clearfix"> 
+<div class="ct2-sd">
+  <div class="panel-sd">
+    <div class="tit">{$cc.name}</div>
+    <ul class="lanmu">
+            {volist name="cate"  id="vo"}
+      <li   ><a href='
+
+    {if $vo['type'] eq 1}{:url('/page',['cid'=>$vo.cid])}
+    {elseif $vo['type'] eq 2}{:url('/article',['cid'=>$vo.cid])}
+    {elseif $vo['type'] eq 3}{:url('/product',['cid'=>$vo.cid])}
+    {elseif $vo['type'] eq 4}{:url('/anli',['cid'=>$vo.cid])}
+    {elseif $vo['type'] eq 5}{:url('/lianxi',['cid'=>$vo.cid])}
+    {elseif $vo['type'] eq 6}{:url('/honor',['cid'=>$vo.cid])}
+    {/if}
+
+
+        '>{$vo.name}</a></li>
+      {/volist}
+    </ul>
+  </div>
+{include file="common/left"/}
+</div>
+
+      <div class="ct2-mn">
+        <div class="yunu-curmbs"> <span>您的位置：</span> 
+
+
+       
+                    <a href='/'>主页</a> >
+ {volist name="weizhi"  id="vo"}
+       <a href='
+
+
+    {if $vo['type'] eq 1}{:url('/page',['cid'=>$vo.cid])}
+    {elseif $vo['type'] eq 2}{:url('/article',['cid'=>$vo.cid])}
+    {elseif $vo['type'] eq 3}{:url('/product',['cid'=>$vo.cid])}
+    {elseif $vo['type'] eq 4}{:url('/anli',['cid'=>$vo.cid])}
+    {elseif $vo['type'] eq 5}{:url('/lianxi',['cid'=>$vo.cid])}
+     {elseif $vo['type'] eq 6}{:url('/honor',['cid'=>$vo.cid])}
+     
+    {/if}
+
+
+    '>{$vo.name}</a> >
+
+{/volist}
+
+        </div>
+        <ul class="list-1 list-1-1 clearfix">
+          
+
+
+          {volist name="Honor"   id="vo"}
+          <li> <a href="{:url('/honorDetails',['aid'=>$vo.id])}">
+            <div class="img-cover"><span style="background-image: url({$vo.pic});"></span></div>
+            <div class="text">
+              <p>{$vo.title}</p>
+            </div>
+            </a> </li>
+          
+      {/volist}
+          
+        </ul>
+        <div class="ab_pages">
+  <ul>
+     {$Honor->render()}
+  </ul>
+</div>
+ </div>
+    </div>
+  </div>
+</div>
+
+{include file="common/footer"/}
+</body>
+</html>

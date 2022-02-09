@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html class="x-admin-sm">
+    
+    <head>
+        <meta charset="UTF-8">
+        <title>欢迎页面-X-admin2.2</title>
+        <meta name="renderer" content="webkit">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
+        <link rel="stylesheet" href="__ADMIN__/css/font.css">
+        <link rel="stylesheet" href="__ADMIN__/css/xadmin.css">
+		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="__ADMIN__/lib/webuploader/webuploader.css" />
+        <script type="text/javascript" src="__ADMIN__/lib/layui/layui.js" charset="utf-8"></script>
+        <script type="text/javascript" src="__ADMIN__/js/xadmin.js"></script>
+		<script type="text/javascript" src="__ADMIN__/lib/webuploader/webuploader.js"></script> 
+   </head>
+    
+    <body>
+	
+       <div class="layui-fluid">
+		
+            <div class="layui-row">
+			
+                <form class="layui-form">
+				
+					<input type="hidden" name="id" value="{$data.id}">	
+
+			<div class="layui-tab">
+			  <ul class="layui-tab-title">
+				<li class="layui-this">基本设置</li>
+								
+			   
+                           <li>SEO设置</li>
+						    <li>图片设置</li>
+
+			  </ul>
+  
+  
+  
+		  
+		  
+		  <div class="layui-tab-content">
+		  
+		  
+		   <!---111---->
+		  
+		  
+		  
+			<div class="layui-tab-item layui-show">
+								
+						
+					
+				 <div class="layui-form-item">
+																<label class="layui-form-label"> <span class="x-red">*</span>网站名称：</label>
+																<div class="layui-input-block">
+																  <input type="text" name="name" required    value="{$data.name}" lay-verify="required" placeholder="请输入网站名称" autocomplete="off" class="layui-input">
+																</div>
+				</div>
+											 
+				
+			  
+			  <div class="layui-form-item">
+				<label class="layui-form-label"> <span class="x-red">*</span>手机:</label>
+				<div class="layui-input-inline">
+				  <input type="text" name="tel"    value="{$data.tel}"  required lay-verify="required" placeholder="请输入手机号码" autocomplete="off" class="layui-input">
+				</div>
+
+			  </div>
+
+	  
+			  <div class="layui-form-item">
+				<label class="layui-form-label"> <span class="x-red">*</span>固话:</label>
+				<div class="layui-input-inline">
+				  <input type="text" name="tela"    value="{$data.tela}"  required lay-verify="required" placeholder="请输入固话" autocomplete="off" class="layui-input">
+				</div>
+
+			  </div>
+
+
+
+	  <div class="layui-form-item">
+				<label class="layui-form-label"> <span class="x-red">*</span>QQ账号:</label>
+				<div class="layui-input-inline">
+				  <input type="text" name="qq"  value="{$data.qq}"   required lay-verify="required" placeholder="请输入qq账号" autocomplete="off" class="layui-input">
+				</div>
+			</div>
+
+
+
+
+
+		  <div class="layui-form-item">
+				<label class="layui-form-label"> <span class="x-red">*</span>email:</label>
+				<div class="layui-input-inline">
+				  <input type="text" name="email"  value="{$data.email}"   required  placeholder="请输入邮箱地址" autocomplete="off" class="layui-input">
+				</div>
+			</div>
+
+		 <div class="layui-form-item">
+						<label class="layui-form-label"> <span class="x-red">*</span>地址：</label>
+						<div class="layui-input-block">
+						  <input type="text" name="dizhi" value="{$data.dizhi}"    required  lay-verify="required" placeholder="请输入园所地址" autocomplete="off" class="layui-input">
+						</div>
+			  </div>  
+
+			
+			  		
+			 <div class="layui-form-item">
+						<label class="layui-form-label"> <span class="x-red">*</span>版权：</label>
+						<div class="layui-input-block">
+						  <input type="text" name="copyright"  value="{$data.copyright}"    required  lay-verify="required" placeholder="请输入底部版权信息" autocomplete="off" class="layui-input">
+						</div>
+			  </div>  
+			  
+			  
+			  
+
+
+	
+	
+	
+	
+	</div>
+ <!---111---->
+ 
+ <!---22---->
+ 			
+											  <div class="layui-tab-item">
+											  
+												
+												
+														  
+													 <div class="layui-form-item">
+																<label class="layui-form-label"> <span class="x-red">*</span>SEO标题：</label>
+																<div class="layui-input-block">
+																  <input type="text" name="seotitle" required    value="{$data.seotitle}" lay-verify="required" placeholder="请输入网站名称" autocomplete="off" class="layui-input">
+																</div>
+													  </div>
+											 
+												
+												
+												
+												
+														 <div class="layui-form-item">
+																	<label class="layui-form-label"> <span class="x-red">*</span>关键词：</label>
+																	<div class="layui-input-block">
+																	  <input type="text" name="keywords" value="{$data.keywords}"    required  lay-verify="required" placeholder="请输入keywords" autocomplete="off" class="layui-input">
+																	</div>
+														  </div>  
+														  
+														  
+														  
+														  <div class="layui-form-item layui-form-text">
+															<label class="layui-form-label"> <span class="x-red">*</span>描述：</label>
+															<div class="layui-input-block">
+															  <textarea name="description" placeholder="请输入内容" class="layui-textarea">{$data.description}</textarea>
+															</div>
+														  </div>
+												 <div class="layui-form-item layui-form-text">
+															<label class="layui-form-label"> <span class="x-red">*</span>百度统计：</label>
+															<div class="layui-input-block">
+															  <textarea name="tongji" placeholder="请黏贴代码" class="layui-textarea">{$data.tongji} </textarea>
+															</div>
+														  </div>
+														  
+											<div class="layui-form-item layui-form-text">
+															<label class="layui-form-label"> <span class="x-red">*</span>爱番番：</label>
+															<div class="layui-input-block">
+															  <textarea name="fanfan" placeholder="请黏贴爱番番代码" class="layui-textarea">{$data.fanfan} </textarea>
+															</div>
+														  </div>
+											  
+											  
+													
+											  
+											  
+											  
+											  </div>
+											 
+  <!---22---->
+ 
+								
+							<div class="layui-tab-item">
+										
+										
+										 <div class="layui-form-item">
+											  <label class="layui-form-label"> <span class="x-red">*</span>顶部LOGO：</label>
+													
+													    <input type="hidden" name="logo"  value="{$data['logo']}">
+											<button type="button" class="layui-btn ueditor" >上传图片</button>
+												<div class="layui-input-block"   style="border:1px dotted #ff0000;width:350px;height:100px">
+												<img class="layui-upload-img demo1"   style="width:350px;height:100px"   src="/{$data['logo']}" >
+												<p calss="demoText"></p>
+											</div>
+							  
+													
+											
+											</div>
+											
+											
+							
+											 <div class="layui-form-item">
+											  <label class="layui-form-label"> <span class="x-red">*</span>公众号：</label>
+													
+											
+												<input type="hidden" name="gongpic"  value="{$data['gongpic']}">
+												<button type="button" class="layui-btn ueditor" >上传图片</button>
+												<div class="layui-input-block"    style="border:1px dotted #ff0000;width:200px;height:200px">
+													<img class="layui-upload-img demo1"  style="width:200px;height:200px"   src="/{$data['gongpic']}">
+													<p calss="demoText"></p>
+												</div>
+													
+											
+											</div>
+
+
+
+									<div class="layui-form-item">
+											  <label class="layui-form-label"> <span class="x-red">*</span>底部LOGO：</label>
+													
+													    <input type="hidden" name="Dlogo"  value="{$data['Dlogo']}">
+											<button type="button" class="layui-btn ueditor" >上传图片</button>
+												<div class="layui-input-block"  style="border:1px dotted #ff0000;width:350px;height:150px">
+												<img class="layui-upload-img demo1"   style="width:350px;height:150px"    src="/{$data['Dlogo']}" >
+												<p calss="demoText"></p>
+											</div>
+							  
+													
+											
+									</div>
+											
+									
+											
+											
+							 
+							</div>
+							
+							
+							
+ </hr>
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ <!--333--->
+  </div>
+</div>
+					
+
+
+        <div class="layui-form-item">
+        <label for="L_repass" class="layui-form-label"></label>
+        <button class="layui-btn" lay-filter="add" lay-submit="">更新</button></div>
+        </form>
+        </div>
+        </div>
+		
+	<script src="/static/build/layui.js"></script>
+	
+	
+	
+<script>
+layui.use('upload', function(){
+  var $ = layui.jquery
+  ,upload = layui.upload;
+  
+ var uploadInst = upload.render({
+    elem: '.ueditor'
+    ,url: '/admin/systemImg' //改成您自己的上传接口
+    ,before: function(obj){
+        var item = this.item;
+        //预读本地文件示例，不支持ie8
+        obj.preview(function(index, file, result){
+        item.nextAll('div').find('img').attr('src',result);
+        });
+    }
+    ,done: function(res){
+        var item = this.item;
+        //如果上传成功
+        if(res.code == 1){
+		layer.msg(res.msg);
+        item.prev().val(res.info);
+        }
+           return layer.msg(res.msg);
+    }
+    ,error: function(){
+        //演示失败状态，并实现重传
+        var demoText = item.nextAll('p');
+        demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-xs demo-reload">重试</a>');
+        demoText.find('.demo-reload').on('click', function(){
+            uploadInst.upload();
+        });
+    }
+});
+
+  
+});
+</script>
+
+
+
+
+
+
+
+        <script>
+		layui.use(['form', 'layer'],
+            function() {
+                $ = layui.jquery;
+                var form = layui.form,
+		
+                layer = layui.layer;
+
+                //自定义验证规则
+                form.verify({
+                    name: function(value) {
+                        if (value.length < 2) {
+                            return '名称至少得2个字符啊';
+                        }
+                    },
+			
+					
+			
+             
+                });
+
+                //监听提交
+          form.on('submit(add)', function(data){
+            //发异步，把数据提交给php
+              $.post("{:url('/admin/system/update')}",data.field,function(res){
+                if(res.status=='success'){
+                    layer.alert(res.msg, {icon: 6},function () {
+                        parent.location.reload();
+                        // 获得frame索引
+                        var index = parent.layer.getFrameIndex(window.name);
+                        //关闭当前frame
+                        parent.layer.close(index);
+                    });
+                }else{
+                    layer.msg(res.msg);
+                }
+              },'json');
+            return false;
+          });
+		  
+		  
+
+		  
+		  
+		  
+
+            });
+		
+</script>
+<!-- 
+ 
+<script type="text/javascript">
+
+      // 初始化Web Uploader
+      var uploader = WebUploader.create({
+
+    // 选完文件后，是否自动上传。
+    auto: true,
+
+    // swf文件路径
+    swf:  '/static/admin/lib/webuploaderUploader.swf',
+
+    // 文件接收服务端。
+    server: '{:url('/admin/upArtImg')}',
+
+    // 选择文件的按钮。可选。
+    // 内部根据当前运行是创建，可能是input元素，也可能是flash.
+    pick: '#filePicker',
+	
+		
+});
+// 文件上传成功，给item添加成功class, 用样式标记上传成功。
+uploader.on( 'uploadSuccess', function(file,data ) {
+    
+if(data.status=='fail'){
+   $('#imgss').html('<span style="color:red">'+data.info+'</span>');
+}else{
+
+$('#imgss').html('<img src=/'+data.info+'  style="width:200px;height:200px"  ><input type="hidden"  name="pic" value="/'+data.info+'">');
+
+}
+
+
+});
+
+
+
+
+ </script>
+ 
+ <script type="text/javascript">
+
+      // 初始化Web Uploader
+      var uploader = WebUploader.create({
+
+    // 选完文件后，是否自动上传。
+    auto: true,
+
+    // swf文件路径
+    swf:  '/static/admin/lib/webuploaderUploader.swf',
+
+    // 文件接收服务端。
+    server: '{:url('/admin/upArtImg')}',
+
+    // 选择文件的按钮。可选。
+    // 内部根据当前运行是创建，可能是input元素，也可能是flash.
+    pick: '#filePicker2',
+	
+		
+});
+// 文件上传成功，给item添加成功class, 用样式标记上传成功。
+uploader.on( 'uploadSuccess', function(file,data ) {
+    
+if(data.status=='fail'){
+   $('#imgssA').html('<span style="color:red">'+data.info+'</span>');
+}else{
+
+$('#imgssA').html('<img src=/'+data.info+'  style="width:350px;height:100px"  ><input type="hidden"  name="logo" value="/'+data.info+'">');
+
+}
+
+
+});
+
+
+
+
+ </script>
+ 
+  <script type="text/javascript">
+
+      // 初始化Web Uploader
+      var uploader = WebUploader.create({
+
+    // 选完文件后，是否自动上传。
+    auto: true,
+
+    // swf文件路径
+    swf:  '/static/admin/lib/webuploaderUploader.swf',
+
+    // 文件接收服务端。
+    server: '{:url('/admin/systemImg')}',
+
+    // 选择文件的按钮。可选。
+    // 内部根据当前运行是创建，可能是input元素，也可能是flash.
+    pick: '#filePicker3',
+	
+});
+// 文件上传成功，给item添加成功class, 用样式标记上传成功。
+uploader.on( 'uploadSuccess', function(file,data ) {
+    
+if(data.status=='fail'){
+   $('#imgssB').html('<span style="color:red">'+data.info+'</span>');
+}else{
+
+$('#imgssB').html('<img src=/'+data.info+'  style="width:350px;height:100px"  ><input type="hidden"  name="Dlogo" value="/'+data.info+'">');
+
+}
+
+
+});
+
+
+
+
+ </script>
+  -->
+ 
+</body>
+
+</html>

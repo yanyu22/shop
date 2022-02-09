@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>{$product.seotitle}</title>
+<meta name="keywords" content="{$product.keywords}" />
+<meta name="description" content="{$product.description}" />
+<meta name="renderer" content="webkit" />
+<meta charset="utf-8" />
+<meta name="generator" data-variable="/305/,cn,167,167,1,ps01703" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui" />
+<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link rel="stylesheet" href="__INDEX__/css/style.css" />
+<style>
+#product-details, #product-content1 {
+	font-size: 14px;
+}
+.p-20 {
+	padding:20px 0
+}
+.m-t-20 {
+	margin-top:20px
+}
+</style>
+</head>
+<body class="met-navfixed">
+
+{include file="common/header"/}
+
+
+
+<div class="met-banner " data-height="300||">
+  <div class="slick-slide"> <img class="cover-image" src="/{$cates.pic}" srcset="/{$cates.pic}" sizes="(max-width: 767px) 500px" alt="" />
+    <div class="banner-text p-5">
+      <div class="container">
+        <div class="banner-text-con">
+          <div>
+            <h2>{$cates.name}</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="met-position  pattern-show">
+  <div class="container">
+    <div class="row">
+      <ol class="breadcrumb">
+
+
+    <a href="/">首页</a>>
+    {volist name="weizhi"  id="vo"}
+       <a href="
+
+    {if $vo['type'] eq 1}{:url('/page',['cid'=>$vo.cid])}
+    {elseif $vo['type'] eq 2}{:url('/article',['cid'=>$vo.cid])}
+    {elseif $vo['type'] eq 3}{:url('/product',['cid'=>$vo.cid])}
+    {elseif $vo['type'] eq 4}{:url('/anli',['cid'=>$vo.cid])}
+    {elseif $vo['type'] eq 5}{:url('/lianxi',['cid'=>$vo.cid])}
+       {elseif $vo['type'] eq 6}{:url('/honor',['cid'=>$vo.cid])}
+    {/if}
+
+
+    ">{$vo.name}</a> >
+
+{/volist}
+   
+
+
+
+      </ol>
+    </div>
+  </div>
+</div>
+<div class="page met-showproduct pagetype1 animsition">
+  <div class="met-showproduct-head">
+    <div class="container grey-box">
+      <div class="row">
+        <div class="col-md-7">
+          <div class="met-showproduct-list text-center fnGallery slick-dotted" id="met-imgs-carousel"> 
+ {volist name="$product['duopic']"   id="vv"}
+            <div class="slick-slide lg-item-box" data-src="/{$vv}" data-exthumbimage="/{$vv}"> <span><img src="/{$vv}" data-src="/{$vv}" class="img-responsive" /></span> 
+            </div>
+{/volist}
+
+
+        </div>
+        </div>
+        <div class="visible-xs-block visible-sm-block height-20"></div>
+        <div class="col-md-5 product-intro">
+          <h1>{$product.title}</h1>
+          <p class="description">{$product.description}</p>
+          <div class="shop-product-intro grey-500">
+         
+            <div class="m-t-20 clearfix cart-favorite">
+
+             <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin={$system.qq}&site=qq&menu=yes" class="btn btn-lg btn-squared btn-danger m-r-20 product-tocart"><i class="icon fa-cart-plus m-r-5 font-size-20" aria-hidden="true"></i>立即咨询</a> 
+
+             </div>
+          </div>
+          <div class="tools"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="met-showproduct-body">
+    <div class="container">
+      <div class="row no-space">
+        <div class="col-md-9 product-content-body">
+          <div class="row">
+            <div class="panel product-detail">
+              <div class="panel-body">
+                <ul class="nav nav-tabs nav-tabs-line met-showproduct-navtabs affix-nav">
+                  <li class="active"><a data-toggle="tab" href="#product-details" data-get="product-details">详细信息</a></li>
+
+                </ul>
+                <div class="tab-content">
+                  <div class="tab-pane met-editor lazyload clearfix  active" id="product-details">
+
+                   {$product.content}
+
+                </div>
+         
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--右侧开始-->
+        <div class="col-md-3">
+          <div class="row">
+            <div class="panel product-hot">
+              <div class="panel-body">
+                <h4 class="example-title">热门推荐</h4>
+                <ul class="blocks-2 blocks-sm-3 mob-masonry" data-scale="1">
+
+ {volist name="remen"  id="vo"}
+                  <li> <a href="/a/chanpin/bangongjiaju/25.html" title="{$vo.title}" class="img"> <img data-original="{$vo.pic}" alt="{$vo.title}" class="cover-image" style="height:200px;" /> </a> <a href="{:url('/productD', ['aid'=>$vo.id])}" title="{$vo.title}" target="_blank" class="txt">{$vo.title}</a> </li>
+{/volist}
+
+
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--右侧结束--> 
+      </div>
+    </div>
+  </div>
+</div>
+{include file="common/footer"/}
+
+
+</body>
+</html>

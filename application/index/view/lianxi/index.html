@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>{$cates.seotitle}</title>
+<meta name="keywords" content="{$cates.key}" />
+<meta name="description" content="{$cates.desc}" />
+<meta name="renderer" content="webkit" />
+<meta charset="utf-8" />
+<meta name="generator" data-variable="/305/,cn,167,167,1,ps01703" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui" />
+<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link rel="stylesheet" href="__INDEX__/css/style.css" />
+<script type="text/javascript" src="__INDEX__/js/map.js"></script>
+<style type="text/css">
+#allmap {width: 100%;height:400px;margin-top:20px;overflow: hidden;font-family:"微软雅黑";}
+#allmap b{color: #CC5522;font-size: 14px; }
+#allmap img{max-width: none;}
+</style>
+</head>
+
+<body class="met-navfixed-index">
+
+
+{include file="common/header"/}
+
+
+<div class="met-banner " data-height="300||">
+  <div class="slick-slide"> <img class="cover-image" src="/{$cates.pic}" srcset="/{$cates.pic}" sizes="(max-width: 767px) 500px" alt="" />
+    <div class="banner-text p-5">
+      <div class="container">
+        <div class="banner-text-con">
+          <div>
+            <h2>{$cc.name}</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="met-column-nav  ">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 sidebar_tile">
+        <ul class="met-column-nav-ul">
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<section class="met-show animsition">
+  <div class="container">
+    <div class="row">
+      <div class="met-editor lazyload clearfix">
+        <div class="container_header wow animated" style="padding: 10px 0px 30px; margin: 0px; animation-duration: 1s; animation-fill-mode: both; font-size: 22px; text-align: center; color: rgb(68, 68, 68); font-family: Arial, 微软雅黑; white-space: normal; visibility: visible;">
+          <p class="title" style="padding: 0px; margin-bottom: 0px;">{$cates.name}</p>
+          <p class="subtitle" style="padding: 0px; margin-bottom: 0px; font-size: 14px; color: rgb(153, 153, 153);">contact</p>
+        </div>
+        <div class="container_content" style="padding: 0px; margin: 0px; color: rgb(68, 68, 68); font-family: Arial, 微软雅黑; font-size: 13px; white-space: normal;">
+          <div class="content_wrapper" style="padding: 0px; margin: 0px 0 20px 0;"> &nbsp;{$cates.content}</div>
+          <div class="message">
+            <div class="mess_con">
+
+<br/>
+          <div id="allmap"></div>
+ 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+{include file="common/footer"/}
+
+
+
+<script type="text/javascript">
+      var map = new BMap.Map("allmap");
+      map.centerAndZoom(new BMap.Point(117.214882,36.656074), 14);
+      var marker1 = new BMap.Marker(new BMap.Point(117.214882,36.656074));  // 创建标注
+      map.addOverlay(marker1);              // 将标注添加到地图中
+      //marker1.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画                
+      //创建信息窗口 
+      var infoWindow1 = new BMap.InfoWindow("<b>博科集团</b><br>地址：山东省济南市历城区港源路博科集团总部<br>电话：{$system.tel}");
+      marker1.openInfoWindow(infoWindow1);
+      //marker1.addEventListener("click", function(){this.openInfoWindow(infoWindow1);});   
+      //向地图中添加缩放控件
+ var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+ map.addControl(ctrl_nav);
+      //向地图中添加缩略图控件
+ var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:1});
+ map.addControl(ctrl_ove);
+      //向地图中添加比例尺控件
+ var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+ map.addControl(ctrl_sca);
+ 
+ map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+        map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+        map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+        map.enableKeyboard();//启用键盘上下左右键移动地             
+</script>
+</body>
+</html>
